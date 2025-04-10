@@ -1,9 +1,7 @@
-## Usage
+./setup.sh
 
-**Note**: Make sure to supply `ANTHROPIC_API_KEY` in `.env` or as an environment variable.
+## MCP server getup
 
-```
-uv run flight-mcp.py
 
-uv run client.py http://0.0.0.0:8081/sse
-```
+## api server
+python3 app.py

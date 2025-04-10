@@ -89,7 +89,7 @@ async def search_flights(source: str, destination: str, date: str) -> str:
                             "recommendation_completed"
                             "?sort_by_recommended_only=-1"
                             "&page_no=1"
-                            "&page_size=20"
+                            "&page_size=1"
                             "&default_current_filter=true"
                             "&version=2"
                             "&multi_city=false"
@@ -127,14 +127,14 @@ async def search_flights(source: str, destination: str, date: str) -> str:
                                 "create_trip_response": trip_response,
                                 "package_response": package_resp.json(),
                                 "search_package_response": search_package_resp.json()
-                            }, 200
+                            }
                         else:
                             result =  {
                                 "search_package_response": f"Failed to fetch search package: {search_package_resp.status_code}",
                                 "text": search_package_resp.text
                             }, search_package_resp.status_code
 
-                        return result
+                        return result,200
                     except json.JSONDecodeError:
                         return jsonify({"error": "Response was not valid JSON", "text": response.text}), 502
             except json.JSONDecodeError:
