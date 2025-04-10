@@ -89,7 +89,7 @@ async def search_flights(source: str, destination: str, date: str) -> str:
                             "recommendation_completed"
                             "?sort_by_recommended_only=-1"
                             "&page_no=1"
-                            "&page_size=100"
+                            "&page_size=20"
                             "&default_current_filter=true"
                             "&version=2"
                             "&multi_city=false"
